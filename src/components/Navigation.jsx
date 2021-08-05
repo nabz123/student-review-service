@@ -5,7 +5,7 @@ function Navigation(props) {
   return (
     <div className="navigation">
       <nav class="flex items-center bg-gray-800 p-3 flex-wrap">
-      <a href="#" class="p-2 mr-4 inline-flex items-center">
+      <a href="/"class="p-2 mr-4 inline-flex items-center">
         <svg
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
@@ -17,6 +17,7 @@ function Navigation(props) {
         </svg>
         <span class="text-xl text-white font-bold uppercase tracking-wide"
           >Hall Review</span>
+                
       </a>
       <button
         class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler"
