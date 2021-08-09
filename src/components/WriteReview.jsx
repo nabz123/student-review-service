@@ -21,6 +21,7 @@ const WriteReview = () => {
         mailroom: false,
         lounge_area: false,
         kitchen: false,
+        elevator: false,
     });
     const [comment, setCommment] = useState("");
 
@@ -208,6 +209,11 @@ const WriteReview = () => {
                             className={"choose-amenities false" + (amenity.kitchen ? " btn-amenities-clicked" : "")}
                             onClick={() => setAmenity({...amenity, 'kitchen': !amenity['kitchen']})}>
                             <span>Kitchen <i class="fas fa-utensils"></i></span>
+                        </div>
+                        <div
+                            className={"choose-amenities false" + (amenity.elevator ? " btn-amenities-clicked" : "")}
+                            onClick={() => setAmenity({...amenity, 'elevator': !amenity['elevator']})}>
+                            <span>Elevator <i class="fas fa-arrow-up"></i></span>
                         </div>
                     </div>
                     <textarea maxlength="600" className={" w-full"} placeholder="Write about your experience"
