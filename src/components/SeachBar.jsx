@@ -50,7 +50,7 @@ function SearchBar(props) {
                             }
                         )}
                         <div className="search-bar__add-it-here">
-                            <a href="/rate/add-school">Don't see your school?
+                            <a href="/add-school">Don't see your school?
                                 <span
                                     className="u-d--link u-t--primary"> Add it here</span>
                             </a>

@@ -1,6 +1,6 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import {About, Contact, DetailView, Footer, Home, Navigation, RateHall, WriteReview} from "./components";
+import {About, Contact, DetailView, Footer, Home, Navigation, RateHall, WriteReview, AddSchool} from "./components";
 
 function App() {
     return (
@@ -14,6 +14,7 @@ function App() {
                     <Route path="/write-review" exact component={() => <WriteReview/>}/>
                     <Route path="/rate" exact component={() => <RateHall/>}/>
                     <Route path="/university/:name" exact component={() => <DetailView/>}/>
+                    <Route path="/add-school" exact component={() => <AddSchool/>}/>
                 </Switch>
                 <Footer/>
             </Router>
