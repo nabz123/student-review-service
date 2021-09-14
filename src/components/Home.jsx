@@ -5,8 +5,8 @@ var searchArr=require('./data/hallsData');
 function Home() {
     return (
         <div className="Home main-bg"
-             style={{background: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://firebasestorage.googleapis.com/v0/b/rate-my-dorm.appspot.com/o/schools%2FUniversity-of-California-Berkeley.jpg?alt=media&token=8d453e96-187a-44b3-8a21-750494a4286c")'}}>
-
+             style={{background: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/dx5b1ecms/image/upload/e_grayscale/a_90/v1628732099/student_vrs0qq.jpg")'}}>
+                 
             <div className="home__landing-text"> The Future Of Hall Reviews</div>
             <SearchBar placeholder="Search" data={searchArr}/>
             

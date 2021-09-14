@@ -30,7 +30,7 @@ const WriteReview = () => {
 
             <span className="text-4xl text-left fyont-semibold text-black">Add a<span
                             // have a foreach to show actual name of location
-                            className={"font-semibold text-blue-500"}> School</span></span>
+                            className={"font-semibold text-indigo-600"}> School</span></span>
 
             <div className="flex flex-wrap  lg:-mx-4">
                 <div className="my-1 px-1 w-full md:w-2/5 lg:my-4 lg:px-4 lg:w-2/5">
@@ -52,7 +52,7 @@ const WriteReview = () => {
                 <div className="my-1 px-1 w-full md:w-2/5 lg:my-4 lg:px-4 lg:w-2/5">
                     <div>
                         <span className="text-2xl text-left  text-black">Rate the <span
-                            className={"font-semibold text-blue-500"}>room</span> out of 5 stars </span>
+                            className={"font-semibold text-indigo-600"}>room</span> out of 5 stars </span>
                     </div>
                     <div>
                         <span className="text-base text-left  text-gray-500">Keep in mind: size, comfort, natural lighting </span>
@@ -70,7 +70,7 @@ const WriteReview = () => {
                 <div className="my-1 px-1 w-full md:w-2/5 lg:my-4 lg:px-4 lg:w-2/5">
                     <div>
                         <span className="text-2xl text-left  text-black">Rate the <span
-                            className={"font-semibold text-blue-500"}>building</span> out of 5 stars
+                            className={"font-semibold text-indigo-600"}>building</span> out of 5 stars
                              </span>
                     </div>
                     <div>
@@ -89,7 +89,7 @@ const WriteReview = () => {
                 <div className="my-1 px-1 w-full md:w-2/5 lg:my-4 lg:px-4 lg:w-2/5">
                     <div>
                         <span className="text-2xl text-left  text-black">  Rate the <span
-                            className={"font-semibold text-blue-500"}>bathroom</span> out of 5 stars </span>
+                            className={"font-semibold text-indigo-600"}>bathroom</span> out of 5 stars </span>
                     </div>
                     <div>
                         <span className="text-base text-left  text-gray-500">Keep in mind: cleanliness, private vs communal </span>
@@ -107,7 +107,7 @@ const WriteReview = () => {
                 <div className="my-1 px-1 w-full md:w-2/5 lg:my-4 lg:px-4 lg:w-2/5">
                     <div>
                         <span className="text-2xl text-left  text-black">Rate the <span
-                            className={"font-semibold text-blue-500"}>location</span> out of 5 stars </span>
+                            className={"font-semibold text-indigo-600"}>location</span> out of 5 stars </span>
                     </div>
                     <div>
                         <span className="text-base text-left  text-gray-500">Keep in mind: distance to classes, safety of area </span>
@@ -126,7 +126,7 @@ const WriteReview = () => {
                 <div className="my-1 px-1 w-full md:w-auto lg:my-4 lg:px-4 lg:w-auto">
                     <div>
                         <span className="text-2xl text-left  text-black">What   <span
-                            className={"font-semibold text-blue-500"}>calendar</span> year did you live here?</span>
+                            className={"font-semibold text-indigo-600"}>calendar</span> year did you live here?</span>
                     </div>
                 </div>
                 <div className="my-1 px-1  md:w-1/5 lg:my-4 lg:px-4 lg:w-1/5">
@@ -147,7 +147,7 @@ const WriteReview = () => {
                 <div className="my-1 px-1 w-full md:w-auto lg:my-4 lg:px-4 lg:w-auto">
                     <div>
                         <span className="text-2xl text-left  text-black">What <span
-                            className={"font-semibold text-blue-500"}>type of room</span> did you have?</span>
+                            className={"font-semibold text-indigo-600"}>type of room</span> did you have?</span>
                     </div>
                 </div>
                 <div className="my-1 px-1  md:w-1/5 lg:my-4 lg:px-4 lg:w-1/5">
@@ -166,7 +166,7 @@ const WriteReview = () => {
                 <div className="my-1 px-1 w-full md:w-auto lg:my-4 lg:px-4 lg:w-auto">
                     <div>
                         <span className="text-2xl text-left  text-black">Would you  <span
-                            className={"font-semibold text-blue-500"}>recommend</span>  this hall to a friend?</span>
+                            className={"font-semibold text-indigo-600"}>recommend</span>  this hall to a friend?</span>
                     </div>
                 </div>
                 <div className="my-1 px-1  md:w-1/5 lg:my-4 lg:px-4 lg:w-1/5">
@@ -183,7 +183,7 @@ const WriteReview = () => {
                 <div className="my-1 px-1 w-full md:w-auto lg:my-4 lg:px-4 lg:w-auto">
                     <div>
                         <span className="text-2xl text-left  text-black">Select the   <span
-                            className={"font-semibold text-blue-500"}>amenities</span> that this hall offers</span>
+                            className={"font-semibold text-indigo-600"}>amenities</span> that this hall offers</span>
                     </div>
                 </div>
 
@@ -235,7 +235,7 @@ const WriteReview = () => {
                     <textarea maxlength="600" className={" w-full"} placeholder="Write about your experience"
                               value={comment} onChange={(e) => setCommment(e.target.value)}
                     /><br/>
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
                             onClick={() => {
                                 console.log(yearArr);
 
