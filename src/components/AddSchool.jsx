@@ -1,21 +1,17 @@
-import {useMemo, useState} from 'react'
+import {useEffect, useState} from 'react'
 import 'rc-slider/assets/index.css';
 import Slider from 'rc-slider';
 import './assets/rc_slider_custom.css'
-import {useParams,useHistory} from "react-router-dom";
-
-var yearArr = [];
-var curYear = new Date().getFullYear();
+var yearArr=[2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022] //add years by adding to array
+var curYear=new Date().getFullYear();
 
 const WriteReview = () => {
-    var {name, hall} = useParams();
-    const history = useHistory();
     const [rateRoom, setRateRoom] = useState(1);
     const [rateBuilding, setRateBuilding] = useState(1);
     const [rateBathroom, setRateBathroom] = useState(1);
     const [rateLocation, setRateLocation] = useState(1);
     const [roomType, setRoomType] = useState("single");
-    const [calendar, setCalendar] = useState(new Date().getFullYear());
+    const [year, setCalendar] = useState(2021);
     const [recommend, setRecommend] = useState("yes");
     const [amenity, setAmenity] = useState({
         bath: false,
@@ -29,30 +25,37 @@ const WriteReview = () => {
     });
     const [comment, setComment] = useState("");
 
-    useMemo(() => {
-        for (var i = new Date().getFullYear() - 10; i < new Date().getFullYear() + 1; i++) {
-            yearArr.push(i);
-        }
-    })
-
     return (
         <div className=" my-6 mx-auto px-4 md:px-12">
 
-            <span className="text-4xl text-left font-semibold text-black"><span
-                className={"font-semibold text-indigo-600"}>Rate</span> {hall} </span>
-
-            <div className={"mt-6"}>
-                <span><i className="fa fa-home amenity-icon"></i> See all <span onClick={()=>{history.push(`/detail/${name}`)}} className={'cursor-pointer underline'}>{hall}</span> reviews</span>
-            </div>
+            <span className="text-4xl text-left font-semibold text-black">Add a<span
+                            // have a foreach to show actual name of location
+                            className={"font-semibold text-indigo-600"}> School</span></span>
 
             <div className="flex flex-wrap  lg:-mx-4">
                 <div className="my-1 px-1 w-full md:w-2/5 lg:my-4 lg:px-4 lg:w-2/5">
                     <div>
-                        <span className="text-2xl text-left  text-black">Rate the <span
+                        <label><span className="text-2xl text-left  text-black">Enter your institution name </span>
+                            <input className="input-box mt-4 mb-4" type="text" placeholder="Enter your institution/university" name="institution-name" />
+                        </label>
+                    </div>
+                    <div>
+                        <label><span className="text-2xl text-left  text-black">Enter your hall name</span>
+                            <input type="text" className="input-box mt-4 mb-2" placeholder="Enter the hall you want to review" name="hall-name" />
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div className="flex flex-wrap  lg:-mx-4">
+                <div className="my-1 px-1 w-full md:w-2/5 lg:my-4 lg:px-4 lg:w-2/5">
+                    <div>
+                        <span className="text-2xl text-left text-black">Rate the <span
                             className={"font-semibold text-indigo-600"}>room</span> out of 5 stars </span>
                     </div>
                     <div>
-                        <span className="text-base text-left  text-gray-500">Keep in mind: size, comfort, natural lighting </span>
+                        <span className="text-base text-left text-gray-500">Keep in mind: size, comfort, natural lighting </span>
                     </div>
                 </div>
                 <div className="mb-3 px-1 w-full md:w-1/5 lg:my-4 lg:px-4 lg:w-1/5">
@@ -66,7 +69,7 @@ const WriteReview = () => {
             <div className="flex flex-wrap  lg:-mx-4">
                 <div className="my-1 px-1 w-full md:w-2/5 lg:my-4 lg:px-4 lg:w-2/5">
                     <div>
-                        <span className="text-2xl text-left  text-black">Rate the <span
+                        <span className="text-2xl text-left text-black">Rate the <span
                             className={"font-semibold text-indigo-600"}>building</span> out of 5 stars
                              </span>
                     </div>
@@ -132,8 +135,7 @@ const WriteReview = () => {
                     }}>
                         {
                             yearArr.map((item, i) => {
-                                return <option key={i} value={item}
-                                               selected={(item == curYear) ? "selected" : ""}>{item}</option>
+                                return <option key={i} value={item} selected={(item===curYear)?"selected":""}>{item}</option>
                             })
                         }
 
@@ -184,12 +186,10 @@ const WriteReview = () => {
                             className={"font-semibold text-indigo-600"}>amenities</span> that this hall offers</span>
                     </div>
                 </div>
-
             </div>
 
             <div className="flex flex-wrap  lg:-mx-4">
                 <div className="my-1 px-1 w-full md:w-2/5 lg:my-4 lg:px-4 lg:w-2/5">
-
 
                     <div class="amenities">
 
@@ -233,7 +233,7 @@ const WriteReview = () => {
                     <textarea maxlength="600" className={" w-full"} placeholder="Write about your experience"
                               value={comment} onChange={(e) => setComment(e.target.value)}
                     /><br/>
-                    <button class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded mt-2"
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
                             onClick={() => {
                                 console.log(yearArr);
 
@@ -253,7 +253,7 @@ const WriteReview = () => {
                                     rateBuilding,
                                     rateBathroom,
                                     rateLocation,
-                                    calendar,
+                                    year,
                                     roomType,
                                     recommend,
                                     amenity,
@@ -264,7 +264,6 @@ const WriteReview = () => {
                     </button>
                 </div>
             </div>
-
         </div>
     );
 }

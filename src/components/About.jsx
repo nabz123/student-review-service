@@ -6,6 +6,7 @@ function About() {
       <div class="container">
        <h1>About Us</h1>
       </div>
+      <div id='product-component-1631830819052'></div>
     </div>
   );
 }
