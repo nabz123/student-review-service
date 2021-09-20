@@ -13,12 +13,24 @@ var iconArr = {
     dining_hall: ["In-house Dining Hall", "fa-burger-soda"],
     laundry: ["On-site Laundry", "fa-washer"],
     mailroom: ["Package Receiving Mailroom", "fa-envelope "],
-    elevator: ["Elevator", "fas fa-arrow-up"],
-    kitchen: ["Kitchen", "fas fa-utensils"],
+    elevator: ["Elevator", "fa-telegram-plane"],
+    kitchen: ["Kitchen", "fa-sink"],
     lounge_area: ["Lounge/Common Area", "fa-loveseat"],
 
 }
 
+var dormArr = [
+    {
+        name: "Olmeca",
+        review: 2,
+        rate: 3.2
+    },
+    {
+        name: "Olmeca",
+        review: 2,
+        rate: 4
+    }
+]
 
 const DetailView = () => {
 
@@ -122,10 +134,10 @@ const DetailView = () => {
                         </div>
                         <div className={"mb-5"}>
                             <span
-                                className=" font-light text-2xl text-left  text-black-500">{universityInfo.location ? universityInfo.location : ""}</span>
+                                className=" font-light text-2xl text-left  text-gray-500">{universityInfo.location ? universityInfo.location : ""}</span>
                         </div>
                         <div className={"mb-5"}>
-                            <span className="text-base text-left  text-black-900">2 student reviews</span>
+                            <span className="text-base text-left  text-gray-900">2 student reviews</span>
                         </div>
 
                         <div className="mb-3">
@@ -175,7 +187,7 @@ const DetailView = () => {
                             <span className="text-xl font-bold text-left">Filter Amenities</span>
                             <div>
                                 <span
-                                    className="text-lg text-left  italic text-black-500">generated from our reviewers </span>
+                                    className="text-lg text-left  italic text-gray-500">generated from our reviewers </span>
                             </div>
 
                             <div className="mt-2">
@@ -251,8 +263,6 @@ const DetailView = () => {
                                         <span className="text-lg ml-2">Lounge/Common Area</span>
                                     </label>
                                 </div>
-
-
                             </div>
                         </div>
 
@@ -261,20 +271,17 @@ const DetailView = () => {
                     <div className={'school__results'}>
                         <div className={"mb-4"}>
                             <span className="text-3xl text-left  text-black"><span
-                                className={"  text-blue-500"}>{universityInfo.halls ? universityInfo.halls.length : 0} Halls </span> match your filters </span>
+                                className={"  text-blue-500"}>{universityInfo.halls ? universityInfo.halls.length : 0} Dorms </span> match your filters </span>
                         </div>
                         <div>
                             <div className={"choose-amenities false"}>
                                 <span>Sorted by {showSortFilter()}</span>
                             </div>
-                            {/*<div className={"choose-amenities false"}>*/}
-                            {/*    <span>Showing {showClassFilter()}</span>*/}
-                            {/*</div>*/}
 
                             {getAmenitesComponents()}
 
                             {getResetFlagStatus() ?
-                                <div className={"choose-amenities-inactive false text-black-600"}
+                                <div className={"choose-amenities-inactive false text-gray-600"}
                                      onClick={resetAllFilters}>
                                     <span>Reset <i className="fas fa-times"></i></span>
                                 </div> : ""}
@@ -282,7 +289,7 @@ const DetailView = () => {
                         {/* search result...*/}
                         <div>
                             {universityInfo.halls ? universityInfo.halls.map((item, key) => {
-                                return <DetailfilerResult data={item} key={key}/>
+                                return <DetailfilerResult data={item} key={key} link={`/dorm/${universityInfo.name}/${item}`}/>
                             }) : ""}
                         </div>
 

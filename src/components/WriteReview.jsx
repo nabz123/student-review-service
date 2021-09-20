@@ -1,17 +1,21 @@
-import {useEffect, useState} from 'react'
+import {useMemo, useState} from 'react'
 import 'rc-slider/assets/index.css';
 import Slider from 'rc-slider';
 import './assets/rc_slider_custom.css'
-var yearArr=[2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022] //add years by adding to array
-var curYear=new Date().getFullYear();
+import {useParams,useHistory} from "react-router-dom";
+
+var yearArr = [];
+var curYear = new Date().getFullYear();
 
 const WriteReview = () => {
+    var {name, hall} = useParams();
+    const history = useHistory();
     const [rateRoom, setRateRoom] = useState(1);
     const [rateBuilding, setRateBuilding] = useState(1);
     const [rateBathroom, setRateBathroom] = useState(1);
     const [rateLocation, setRateLocation] = useState(1);
     const [roomType, setRoomType] = useState("single");
-    const [year, setCalendar] = useState(2021);
+    const [calendar, setCalendar] = useState(new Date().getFullYear());
     const [recommend, setRecommend] = useState("yes");
     const [amenity, setAmenity] = useState({
         bath: false,
@@ -21,16 +25,25 @@ const WriteReview = () => {
         mailroom: false,
         lounge_area: false,
         kitchen: false,
-        elevator: false,
+        elevator: false
     });
-    const [comment, setCommment] = useState("");
+    const [comment, setComment] = useState("");
+
+    useMemo(() => {
+        for (var i = new Date().getFullYear() - 10; i < new Date().getFullYear() + 1; i++) {
+            yearArr.push(i);
+        }
+    })
 
     return (
         <div className=" my-6 mx-auto px-4 md:px-12">
 
             <span className="text-4xl text-left font-semibold text-black"><span
-                // have a foreach to show actual name of location
-                className={"font-semibold text-indigo-600"}>Rate</span> Uni Col </span> 
+                className={"font-semibold text-indigo-600"}>Rate</span> {hall} </span>
+
+            <div className={"mt-6"}>
+                <span><i className="fa fa-home amenity-icon"></i> See all <span onClick={()=>{history.push(`/detail/${name}`)}} className={'cursor-pointer underline'}>{hall}</span> reviews</span>
+            </div>
 
             <div className="flex flex-wrap  lg:-mx-4">
                 <div className="my-1 px-1 w-full md:w-2/5 lg:my-4 lg:px-4 lg:w-2/5">
@@ -119,7 +132,8 @@ const WriteReview = () => {
                     }}>
                         {
                             yearArr.map((item, i) => {
-                                return <option key={i} value={item} selected={(item===curYear)?"selected":""}>{item}</option>
+                                return <option key={i} value={item}
+                                               selected={(item == curYear) ? "selected" : ""}>{item}</option>
                             })
                         }
 
@@ -217,9 +231,9 @@ const WriteReview = () => {
                         </div>
                     </div>
                     <textarea maxlength="600" className={" w-full"} placeholder="Write about your experience"
-                              value={comment} onChange={(e) => setCommment(e.target.value)}
+                              value={comment} onChange={(e) => setComment(e.target.value)}
                     /><br/>
-                    <button class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
+                    <button class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded mt-2"
                             onClick={() => {
                                 console.log(yearArr);
 
@@ -239,7 +253,7 @@ const WriteReview = () => {
                                     rateBuilding,
                                     rateBathroom,
                                     rateLocation,
-                                    year,
+                                    calendar,
                                     roomType,
                                     recommend,
                                     amenity,
@@ -250,6 +264,7 @@ const WriteReview = () => {
                     </button>
                 </div>
             </div>
+
         </div>
     );
 }

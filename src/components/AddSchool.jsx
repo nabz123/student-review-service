@@ -21,27 +21,27 @@ const WriteReview = () => {
         mailroom: false,
         lounge_area: false,
         kitchen: false,
-        elevator: false,
+        elevator: false
     });
-    const [comment, setCommment] = useState("");
+    const [comment, setComment] = useState("");
 
     return (
         <div className=" my-6 mx-auto px-4 md:px-12">
 
-            <span className="text-4xl text-left fyont-semibold text-black">Add a<span
+            <span className="text-4xl text-left font-semibold text-black">Add a<span
                             // have a foreach to show actual name of location
                             className={"font-semibold text-indigo-600"}> School</span></span>
 
             <div className="flex flex-wrap  lg:-mx-4">
                 <div className="my-1 px-1 w-full md:w-2/5 lg:my-4 lg:px-4 lg:w-2/5">
                     <div>
-                        <label>Enter your institution name
-                            <input className="search-bar__input" type="text" placeholder="Enter your institution/university" name="institution-name" />
+                        <label><span className="text-2xl text-left  text-black">Enter your institution name </span>
+                            <input className="input-box mt-4 mb-4" type="text" placeholder="Enter your institution/university" name="institution-name" />
                         </label>
                     </div>
                     <div>
-                        <label>Enter your hall name
-                            <input type="text" className="search-bar__input" placeholder="Enter the hall you want to review" name="hall-name" />
+                        <label><span className="text-2xl text-left  text-black">Enter your hall name</span>
+                            <input type="text" className="input-box mt-4 mb-2" placeholder="Enter the hall you want to review" name="hall-name" />
                         </label>
                     </div>
                 </div>
@@ -51,11 +51,11 @@ const WriteReview = () => {
             <div className="flex flex-wrap  lg:-mx-4">
                 <div className="my-1 px-1 w-full md:w-2/5 lg:my-4 lg:px-4 lg:w-2/5">
                     <div>
-                        <span className="text-2xl text-left  text-black">Rate the <span
+                        <span className="text-2xl text-left text-black">Rate the <span
                             className={"font-semibold text-indigo-600"}>room</span> out of 5 stars </span>
                     </div>
                     <div>
-                        <span className="text-base text-left  text-gray-500">Keep in mind: size, comfort, natural lighting </span>
+                        <span className="text-base text-left text-gray-500">Keep in mind: size, comfort, natural lighting </span>
                     </div>
                 </div>
                 <div className="mb-3 px-1 w-full md:w-1/5 lg:my-4 lg:px-4 lg:w-1/5">
@@ -69,7 +69,7 @@ const WriteReview = () => {
             <div className="flex flex-wrap  lg:-mx-4">
                 <div className="my-1 px-1 w-full md:w-2/5 lg:my-4 lg:px-4 lg:w-2/5">
                     <div>
-                        <span className="text-2xl text-left  text-black">Rate the <span
+                        <span className="text-2xl text-left text-black">Rate the <span
                             className={"font-semibold text-indigo-600"}>building</span> out of 5 stars
                              </span>
                     </div>
@@ -186,12 +186,10 @@ const WriteReview = () => {
                             className={"font-semibold text-indigo-600"}>amenities</span> that this hall offers</span>
                     </div>
                 </div>
-
             </div>
 
             <div className="flex flex-wrap  lg:-mx-4">
                 <div className="my-1 px-1 w-full md:w-2/5 lg:my-4 lg:px-4 lg:w-2/5">
-
 
                     <div class="amenities">
 
@@ -233,7 +231,7 @@ const WriteReview = () => {
                         </div>
                     </div>
                     <textarea maxlength="600" className={" w-full"} placeholder="Write about your experience"
-                              value={comment} onChange={(e) => setCommment(e.target.value)}
+                              value={comment} onChange={(e) => setComment(e.target.value)}
                     /><br/>
                     <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
                             onClick={() => {

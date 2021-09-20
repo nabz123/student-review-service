@@ -3,13 +3,12 @@ import React from 'react'
 import ReactStars from "react-rating-stars-component";
 
 function DetailfilerResult(props) {
-
     return (
-        <div> <a href="#">
-            <div className="hall-card"><img
-                src="https://firebasestorage.googleapis.com/v0/b/rate-my-dorm.appspot.com/o/dorm-icon.png?alt=media&amp;token=4b18aa47-b1e5-44b3-bbb1-ce99fd9a8b73"
-                alt="Hall" className="hall-card__icon"/>
-                <div className="hall-card__content">
+        <div><a href={props.link}>
+            <div className="dorm-card"><img
+                src="https://res.cloudinary.com/dx5b1ecms/image/upload/v1631499211/dorm-icon.29a83936_ep19rk.svg"
+                alt="Dorm" className="dorm-card__icon"/>
+                <div className="dorm-card__content">
                     <div className=" ">
                         <span
                             className="text-2xl text-left font-bold text-black">
@@ -26,7 +25,7 @@ function DetailfilerResult(props) {
                         <span> 3</span>
                     </div>
 
-                    <div className="text-gray-500"> {5} reviews</div>
+                    <div className="text-gray-500"> {5} review</div>
                 </div>
             </div>
         </a></div>

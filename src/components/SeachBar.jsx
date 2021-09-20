@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react'
-import {useHistory } from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 
 function SearchBar(props) {
     const [searchterm, setSearchterm] = useState("");
     const [searchresult, setSearchResult] = useState([]);
     const history = useHistory();
+
 
     useEffect(() => {
         //request server...
@@ -23,8 +24,17 @@ function SearchBar(props) {
 
     }, [searchterm]);
 
+    const clickSearchItem = (name) => {
+        if (props.clickAction == "main") {
+            history.push(`/detail/${name}`)
+        } else if (props.clickAction == "rate") {
+            props.onSelected(name);
+            setSearchterm("");
+        }
+    }
+
     return (
-        <div className="home__landing-search">
+        <div className={props.className}>
             <div className="search-bar">
                 <div className="search-bar__input-wrapper">
                     <input id="search_school" type="text" onChange={(e) => {
@@ -45,7 +55,7 @@ function SearchBar(props) {
                     <div className="search-bar__result-wrapper">
                         {searchresult.map((item, idx) => {
                                 return <div className="search-bar__result-item" key={idx} onClick={() => {
-                                    history.push(`/university/${item.name}`)
+                                    clickSearchItem(item.name);
                                 }}>{item.name}</div>
                             }
                         )}
@@ -58,7 +68,7 @@ function SearchBar(props) {
                     </div> : ""
                 }
             </div>
-            <div className="home__landing-link"><a href="/write-review">Write a review</a></div>
+            <div className="home__landing-link "><a href="/rate">Write a review</a></div>
         </div>
     )
 }
