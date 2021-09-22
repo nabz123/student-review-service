@@ -1,16 +1,15 @@
 @media (min-width: 1024px) {
   .top-navbar {
-      display: inline-flex !important;
+    display: inline-flex !important;
   }
 }
 
-input[type=text] {
-  border: 1px solid #000000
+input[type="text"] {
+  border: 1px solid #000000;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
-
 
 textarea {
   width: 50%;
@@ -39,7 +38,7 @@ textarea {
   font-size: 16px;
   color: black;
   margin: 0 10px 10px 0;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .choose-amenities-inactive {
@@ -51,7 +50,7 @@ textarea {
   font-size: 16px;
   color: #868686;
   margin: 0 10px 10px 0;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .btn-amenities-clicked {
@@ -60,16 +59,12 @@ textarea {
 }
 
 .Home.main-bg {
-
-  /*background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) no-repeat 0% 0%, rgba(0, 0, 0, 0) url("https://firebasestorage.googleapis.com/v0/b/rate-my-dorm.appspot.com/o/schools%2FUniversity-of-California-Berkeley.jpg?alt=media&token=8d453e96-187a-44b3-8a21-750494a4286c") repeat scroll 0% 0%;*/
   text-align: center;
   padding: 200px 0px;
   background-size: cover !important;
   background-position: 50% !important;
   background-repeat: no-repeat !important;
-
 }
-
 
 .home__landing-search {
   width: 90%;
@@ -77,11 +72,11 @@ textarea {
 }
 
 .home__landing-text {
-color: #fff;
-font-size: 22px;
-margin: 20px auto;
-width: 90%;
-font-weight: 700;
+  color: #fff;
+  font-size: 22px;
+  margin: 20px auto;
+  width: 90%;
+  font-weight: 700;
 }
 
 .school__banner-img {
@@ -108,55 +103,52 @@ responsive...
 */
 @media (min-width: 960px) {
   .Home.main-bg {
-      padding: 250px 0;
+    padding: 250px 0;
   }
 
   .home__landing-search {
-      width: 50%;
+    width: 50%;
   }
 
   .home__landing-text {
-      font-size: 34px;
-      width: 60%;
+    font-size: 34px;
+    width: 60%;
   }
 
   .school__banner-img {
-      height: 350px;
-
+    height: 350px;
   }
   .school__body {
-      margin: 30px;
-      display: flex;
-      justify-content: space-around;
+    margin: 30px;
+    display: flex;
+    justify-content: space-around;
   }
   .school__filter {
-      width: 400px;
-      margin-bottom: 0;
+    width: 400px;
+    margin-bottom: 0;
   }
   .school__results {
-      width: 80%;
-      padding-left: 30px;
+    width: 80%;
+    padding-left: 30px;
   }
 }
 
 .full {
   width: 100%;
   margin: auto;
-
 }
-
 
 /*
 search bar...
 */
 
 .search-bar__input-wrapper {
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .15);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
   background: #fff;
   padding: 5px;
-  border-bottom: 1px solid rgba(0, 0, 0, .15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   color: #333;
 }
 
@@ -173,7 +165,6 @@ search bar...
   visibility: hidden;
   width: 1px;
 }
-
 
 .MuiSvgIcon-root {
   fill: currentColor;
@@ -204,7 +195,6 @@ search bar...
   color: inherit;
   text-decoration: none;
   cursor: pointer;
-
 }
 
 .search-bar__result-wrapper {
@@ -224,14 +214,14 @@ search bar...
 .search-bar__result-item {
   cursor: pointer;
   padding: 10px;
-  border-bottom: 1px solid rgba(0,0,0,.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .search-bar__add-it-here {
   padding: 10px;
   font-size: 16px;
   font-weight: 700;
-  background: rgba(0,0,0,.05);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .u-t--primary {
@@ -245,13 +235,13 @@ search bar...
   position: relative;
 }
 
-
-.form-radio, .form-checkbox{
-  width:20px;
-  height:20px;
+.form-radio,
+.form-checkbox {
+  width: 20px;
+  height: 20px;
 }
 
-.dorm-card{
+.hall-card {
   display: flex;
   margin: 20px 0;
   align-items: center;
@@ -262,7 +252,7 @@ search bar...
   box-shadow: 0 1px 5px 0 rgb(0 0 0 / 15%);
 }
 
-.dorm-card__icon {
+.hall-card__icon {
   width: 75px;
   height: 100%;
   margin-right: 30px;
@@ -273,7 +263,7 @@ search bar...
   align-items: center;
 }
 
-.input-box{
+.input-box {
   width: 100%;
   border: 1px solid #bfbfbf !important;
   padding: 14px 15px;

@@ -51,7 +51,6 @@ function Navigation(props) {
       </div>
     </nav>
     </div>
-    
   );
 }
 

@@ -5,10 +5,10 @@ import ReactStars from "react-rating-stars-component";
 function DetailfilerResult(props) {
     return (
         <div><a href={props.link}>
-            <div className="dorm-card"><img
+            <div className="hall-card"><img
                 src="https://res.cloudinary.com/dx5b1ecms/image/upload/v1631499211/dorm-icon.29a83936_ep19rk.svg"
-                alt="Dorm" className="dorm-card__icon"/>
-                <div className="dorm-card__content">
+                alt="Hall" className="hall-card__icon"/>
+                <div className="hall-card__content">
                     <div className=" ">
                         <span
                             className="text-2xl text-left font-bold text-black">

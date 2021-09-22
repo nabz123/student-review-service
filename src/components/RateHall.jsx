@@ -59,7 +59,7 @@ function Rate() {
 
                     <div className={'text-center'}>
                         <span className="text-3xl text-left font-bold text-black"> Don't see your hall? <span
-                            className={"font-bold cursor-pointer text-blue-500 underline"} onClick={()=>{history.push(`/rate/${selectedItem.name}/add-dorm`)}}> Add it here</span>
+                            className={"font-bold cursor-pointer text-indigo-500 underline"} onClick={()=>{history.push(`/rate/${selectedItem.name}/add-dorm`)}}> Add it here</span>
                         </span>
                     </div>
                 </div> : ""}

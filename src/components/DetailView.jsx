@@ -122,7 +122,7 @@ const DetailView = () => {
     return (
         <div>
             <div className={"school__banner-img"}
-                 style={{backgroundImage: 'url("https://firebasestorage.googleapis.com/v0/b/rate-my-dorm.appspot.com/o/generic-college-photo.jpg?alt=media&token=5e4d1cd6-1110-435c-8597-363775101471")'}}></div>
+                 style={{backgroundImage: 'url("https://res.cloudinary.com/dx5b1ecms/image/upload/v1632276771/generic-college-photo_jv4jqs.jpg")'}}></div>
             <div className=" my-6 mx-auto px-2 md:px-6">
                 <div className={"school__body"}>
                     <div className={"school__filter"}>
@@ -271,7 +271,7 @@ const DetailView = () => {
                     <div className={'school__results'}>
                         <div className={"mb-4"}>
                             <span className="text-3xl text-left  text-black"><span
-                                className={"  text-blue-500"}>{universityInfo.halls ? universityInfo.halls.length : 0} Dorms </span> match your filters </span>
+                                className={"  text-blue-500"}>{universityInfo.halls ? universityInfo.halls.length : 0} Halls </span> match your filters </span>
                         </div>
                         <div>
                             <div className={"choose-amenities false"}>
@@ -292,11 +292,8 @@ const DetailView = () => {
                                 return <DetailfilerResult data={item} key={key} link={`/dorm/${universityInfo.name}/${item}`}/>
                             }) : ""}
                         </div>
-
                     </div>
                 </div>
-
-
             </div>
         </div>
     );
