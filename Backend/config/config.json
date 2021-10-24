@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "eauoqvjt",
+    "password": "aMS1nUgQ-ab6Qu1vGf8ptSs8uRYmaIFX",
+    "database": "eauoqvjt",
+    "host": "rosie.db.elephantsql.com",
+    "dialect": "postgresql"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "Student-Reviews",
+    "host": "localhost",
+    "dialect": "postgresql"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "Student-Reviews",
+    "host": "localhost",
+    "dialect": "postgresql"
+  }
+}
