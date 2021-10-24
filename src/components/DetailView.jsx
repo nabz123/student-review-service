@@ -19,7 +19,7 @@ var iconArr = {
 
 }
 
-var dormArr = [
+var hallArr = [
     {
         name: "Olmeca",
         review: 2,
