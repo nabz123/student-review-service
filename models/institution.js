@@ -17,7 +17,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Institution.init({
-    hall_id: DataTypes.INTEGER,
     Institution_name: DataTypes.STRING
   }, {
     sequelize,
