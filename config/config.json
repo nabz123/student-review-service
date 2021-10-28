@@ -1,0 +1,27 @@
+{
+  "development": {
+    "username": "eauoqvjt",
+    "password": "aMS1nUgQ-ab6Qu1vGf8ptSs8uRYmaIFX",
+    "database": "eauoqvjt",
+    "keepAlive": true,
+    "idleTimeoutMillis": 72000000,
+    "host": "rosie.db.elephantsql.com",
+    "dialect": "postgresql"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "123456",
+    "database": "StudentReviews",
+    "keepAlive": true,
+    "idleTimeoutMillis": 72000000,
+    "host": "127.0.0.1",
+    "dialect": "postgresql"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "Student-Reviews",
+    "host": "localhost",
+    "dialect": "postgresql"
+  }
+}
