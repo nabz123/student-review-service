@@ -19,6 +19,14 @@ module.exports = {
       city_name: 'Dunedin',
       createdAt: new Date(),
       updatedAt: new Date()
+    },{
+      city_name: 'Otago',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },{
+      city_name: 'Canterbury',
+      createdAt: new Date(),
+      updatedAt: new Date()
     }
     ], {});
   

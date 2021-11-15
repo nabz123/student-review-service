@@ -3,16 +3,7 @@ import {isMobile} from 'react-device-detect';
 import DetailfilerResult from "./DetailFilterResult"
 import {useParams} from "react-router-dom";
 
-var iconArr = {
-    bath: ["Private Bathroom", "fa-restroom"],
-    air_cond: ["Air Conditioning", "fa-fan"],
-    dining_hall: ["In-house Dining Hall", "fa-burger-soda"],
-    laundry: ["On-site Laundry", "fa-washer"],
-    mailroom: ["Package Receiving Mailroom", "fa-envelope "],
-    elevator: ["Elevator", "fas fa-arrow-up"],
-    kitchen: ["Kitchen", "fas fa-utensils"],
-    lounge_area: ["Lounge/Common Area", "fa-loveseat"],
-}
+import {iconArr} from "./data/constants";
 
 const DetailView = () => {
 
@@ -87,6 +78,29 @@ const DetailView = () => {
                 break;
             case "rate":
                 return "Most Rated"
+                break;
+        }
+    }
+
+    function showClassFilter() {
+        switch (filterClass) {
+            case "all":
+                return "All Classes";
+                break;
+            case "Freshmen":
+                return "Majority Freshmen";
+                break;
+            case "Sophomores":
+                return "Majority Sophomores";
+                break;
+            case "Juniors":
+                return "Majority Juniors";
+                break;
+            case "Seniors":
+                return "Majority Seniors";
+                break;
+            case "Students":
+                return "Majority Graduate Students";
                 break;
         }
     }
@@ -219,6 +233,15 @@ const DetailView = () => {
 
     }
 
+    function getAllReviewCnt() {
+        if (!universityInfo.hall) return 0;
+        var count = 0;
+        universityInfo.hall.forEach(function (item) {
+            count += item.review.length;
+        });
+        return count;
+    }
+
     return (
         <div>
             <div className={"school__banner-img"}
@@ -237,7 +260,7 @@ const DetailView = () => {
                                 className=" font-light text-2xl text-left  text-gray-500">{universityInfo.cities ? universityInfo.cities[0].city_name : ""}</span>
                         </div>
                         <div className={"mb-5"}>
-                            <span className="text-base text-left  text-gray-900">2 student reviews</span>
+                            <span className="text-base text-left  text-gray-900">{getAllReviewCnt()} student reviews</span>
                         </div>
 
                         <div className="mb-3">
@@ -473,7 +496,7 @@ const DetailView = () => {
                         <div>
                             {sortFilterHalls ? sortFilterHalls.map((item, key) => {
                                 return <DetailfilerResult data={item} review={getAvgReview(item.review)} key={key}
-                                                          link={`/dorm/${universityInfo.Institution_name}/${item.hall_name}`}/>
+                                                          link={`/hall/${universityInfo.Institution_name}/${item.hall_name}`}/>
                             }) : ""}
                         </div>
 

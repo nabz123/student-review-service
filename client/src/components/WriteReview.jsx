@@ -17,7 +17,8 @@ const WriteReview = () => {
     const [rateLocation, setRateLocation] = useState(1);
     const [roomType, setRoomType] = useState("single");
     const [calendar, setCalendar] = useState(new Date().getFullYear());
-    const [remommend, setRecommend] = useState("yes");
+    const [recommend, setRecommend] = useState("yes");
+    const [submitAlert, setSubmitAlert] = useState(false);
     const [amenity, setAmenity] = useState({
         bath: false,
         air_cond: false,
@@ -56,7 +57,7 @@ const WriteReview = () => {
         for (var item of institutions) {
             if (item.Institution_name == name) {
                 for (var hall_item of item.hall) {
-                    if(hall_item.hall_name==hall){
+                    if (hall_item.hall_name == hall) {
                         return hall_item.id;
                     }
                 }
@@ -67,6 +68,27 @@ const WriteReview = () => {
 
     return (
         <div className=" my-6 mx-auto px-4 md:px-12">
+
+
+            {submitAlert ?
+                <div
+                    className="bg-teal-100 border-t-4 bg-green-300 border-green-500 rounded-b text-green-900 px-4 py-3 shadow-md"
+                    role="alert">
+                    <div className="flex">
+                        <div className="py-1">
+                            <svg className="fill-current h-6 w-6 text-green-500 mr-4" xmlns="http://www.w3.org/2000/svg"
+                                 viewBox="0 0 20 20">
+                                <path
+                                    d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p className="font-bold">Your review has been sent.</p>
+                            {/*<p className="text-sm">Make sure you know how these changes affect you.</p>*/}
+                        </div>
+                    </div>
+                </div> : ""}
+
 
             <span className="text-4xl text-left font-semibold text-black"><span
                 className={"font-semibold text-blue-500"}>Rate</span> {hall} </span>
@@ -223,33 +245,33 @@ const WriteReview = () => {
                 <div className="my-1 px-1 w-full md:w-2/5 lg:my-4 lg:px-4 lg:w-2/5">
 
 
-                    <div class="amenities">
+                    <div className="amenities">
 
                         <div className={"choose-amenities false" + (amenity.bath ? " btn-amenities-clicked" : "")}
                              onClick={() => setAmenity({...amenity, 'bath': !amenity['bath']})}>
-                            <span>Private Bathroom <i class="fas fa-restroom amenity-icon"></i></span>
+                            <span>Private Bathroom <i className="fas fa-restroom amenity-icon"></i></span>
                         </div>
                         <div className={"choose-amenities false" + (amenity.air_cond ? " btn-amenities-clicked" : "")}
                              onClick={() => setAmenity({...amenity, 'air_cond': !amenity['air_cond']})}>
-                            <span>Air Conditioning <i class="fas fa-fan amenity-icon"></i></span>
+                            <span>Air Conditioning <i className="fas fa-fan amenity-icon"></i></span>
                         </div>
                         <div
                             className={"choose-amenities false" + (amenity.dining_hall ? " btn-amenities-clicked" : "")}
                             onClick={() => setAmenity({...amenity, 'dining_hall': !amenity['dining_hall']})}>
-                            <span>In-house Dining Hall <i class="fa fa-burger-soda amenity-icon"></i></span>
+                            <span>In-house Dining Hall <i className="fa fa-burger-soda amenity-icon"></i></span>
                         </div>
                         <div className={"choose-amenities false" + (amenity.laundry ? " btn-amenities-clicked" : "")}
                              onClick={() => setAmenity({...amenity, 'laundry': !amenity['laundry']})}>
-                            <span>On-site Laundry <i class="fa fa-washer amenity-icon"></i></span>
+                            <span>On-site Laundry <i className="fa fa-washer amenity-icon"></i></span>
                         </div>
                         <div className={"choose-amenities false" + (amenity.mailroom ? " btn-amenities-clicked" : "")}
                              onClick={() => setAmenity({...amenity, 'mailroom': !amenity['mailroom']})}>
-                            <span>Pack Recieving Mailroom <i class="fa fa-envelope amenity-icon"></i></span>
+                            <span>Pack Recieving Mailroom <i className="fa fa-envelope amenity-icon"></i></span>
                         </div>
                         <div
                             className={"choose-amenities false" + (amenity.lounge_area ? " btn-amenities-clicked" : "")}
                             onClick={() => setAmenity({...amenity, 'lounge_area': !amenity['lounge_area']})}>
-                            <span>Lounge/Common Area <i class="fas fa-loveseat"></i></span>
+                            <span>Lounge/Common Area <i className="fas fa-loveseat"></i></span>
                         </div>
                         <div
                             className={"choose-amenities false" + (amenity.kitchen ? " btn-amenities-clicked" : "")}
@@ -265,7 +287,7 @@ const WriteReview = () => {
                     <textarea maxlength="600" className={" w-full"} placeholder="Write about your experience"
                               value={comment} onChange={(e) => setCommment(e.target.value)}
                     /><br/>
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2"
+                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2"
                             onClick={() => {
                                 console.log({
                                         rateRoom,
@@ -273,12 +295,11 @@ const WriteReview = () => {
                                         rateBathroom,
                                         rateLocation,
                                         roomType,
-                                        remommend,
+                                        recommend,
                                         amenity,
                                         comment
                                     }
                                 );
-
 
 
                                 fetch("/api/review/add", {
@@ -296,7 +317,7 @@ const WriteReview = () => {
                                             rateLocation,
                                             calendar,
                                             roomType,
-                                            remommend,
+                                            recommend,
                                             amenity,
                                             comment
                                         },
@@ -304,9 +325,11 @@ const WriteReview = () => {
                                     })
                                 }).then(res => res.json())
                                     .then(res => {
-
-                                        console.log(res);
-                                        history.push(`/`);
+                                        setSubmitAlert(true);
+                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                        setTimeout(function () {
+                                            history.push(`/`);
+                                        }, 3000);
                                     }).catch(error => console.log(error));
                             }}
                     >Submit

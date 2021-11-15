@@ -74,11 +74,11 @@ textarea {
 }
 
 .home__landing-text {
-  color: #fff;
-  font-size: 22px;
-  margin: 20px auto;
-  width: 90%;
-  font-weight: 700;
+    color: #fff;
+    font-size: 22px;
+    margin: 20px auto;
+    width: 90%;
+    font-weight: 700;
 }
 
 .school__banner-img {
@@ -87,6 +87,7 @@ textarea {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .school__body {
     margin: 20px;
 }
@@ -121,18 +122,43 @@ responsive...
         height: 350px;
 
     }
+
     .school__body {
         margin: 30px;
         display: flex;
         justify-content: space-around;
     }
+
     .school__filter {
         width: 400px;
         margin-bottom: 0;
     }
+
     .school__results {
         width: 80%;
         padding-left: 30px;
+    }
+
+    .hall__overview-banner {
+        width: 65%;
+        height: auto;
+        order: 2;
+        position: relative;
+    }
+
+    .hall__overview-rating-wrapper {
+        width: 35%;
+        order: 1;
+    }
+
+    .hall__overview {
+        display: flex;
+    }
+
+    .hall__body-stats {
+        width: 35%;
+        margin-right: 100px;
+        max-width: 400px;
     }
 }
 
@@ -221,14 +247,14 @@ search bar...
 .search-bar__result-item {
     cursor: pointer;
     padding: 10px;
-    border-bottom: 1px solid rgba(0,0,0,.15);
+    border-bottom: 1px solid rgba(0, 0, 0, .15);
 }
 
 .search-bar__add-it-here {
     padding: 10px;
     font-size: 16px;
     font-weight: 700;
-    background: rgba(0,0,0,.05);
+    background: rgba(0, 0, 0, .05);
 }
 
 .u-t--primary {
@@ -238,17 +264,18 @@ search bar...
 .search-bar__result-item:hover {
     background: #f7f7f7;
 }
+
 .search-bar {
     position: relative;
 }
 
 
-.form-radio, .form-checkbox{
-    width:20px;
-    height:20px;
+.form-radio, .form-checkbox {
+    width: 20px;
+    height: 20px;
 }
 
-.dorm-card{
+.hall-card {
     display: flex;
     margin: 20px 0;
     align-items: center;
@@ -259,7 +286,7 @@ search bar...
     box-shadow: 0 1px 5px 0 rgb(0 0 0 / 15%);
 }
 
-.dorm-card__icon {
+.hall-card__icon {
     width: 75px;
     height: 100%;
     margin-right: 30px;
@@ -270,10 +297,21 @@ search bar...
     align-items: center;
 }
 
-.input-box{
+.input-box {
     width: 100%;
     border: 1px solid #bfbfbf !important;
     padding: 14px 15px;
     border-radius: 5px;
     font-size: 21px;
+}
+
+.hall__overview-banner {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    position: relative;
+}
+.hall__body-stats {
+    margin-bottom: 30px;
 }

@@ -9,7 +9,7 @@ services:
       DB_NAME: test
       DB_HOSTNAME: db
     ports:
-      - 3000:3000
+      - 3002:3002
     depends_on:
       db:
         condition: service_healthy

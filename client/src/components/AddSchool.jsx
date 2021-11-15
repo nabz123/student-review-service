@@ -193,49 +193,49 @@ const WriteReview = () => {
                 <div className="my-1 px-1 w-full md:w-2/5 lg:my-4 lg:px-4 lg:w-2/5">
 
 
-                    <div class="amenities">
+                    <div className="amenities">
 
                         <div className={"choose-amenities false" + (amenity.bath ? " btn-amenities-clicked" : "")}
                              onClick={() => setAmenity({...amenity, 'bath': !amenity['bath']})}>
-                            <span>Private Bathroom <i class="fas fa-restroom amenity-icon"></i></span>
+                            <span>Private Bathroom <i className="fas fa-restroom amenity-icon"></i></span>
                         </div>
                         <div className={"choose-amenities false" + (amenity.air_cond ? " btn-amenities-clicked" : "")}
                              onClick={() => setAmenity({...amenity, 'air_cond': !amenity['air_cond']})}>
-                            <span>Air Conditioning <i class="fas fa-fan amenity-icon"></i></span>
+                            <span>Air Conditioning <i className="fas fa-fan amenity-icon"></i></span>
                         </div>
                         <div
                             className={"choose-amenities false" + (amenity.dining_hall ? " btn-amenities-clicked" : "")}
                             onClick={() => setAmenity({...amenity, 'dining_hall': !amenity['dining_hall']})}>
-                            <span>In-house Dining Hall <i class="fa fa-burger-soda amenity-icon"></i></span>
+                            <span>In-house Dining Hall <i className="fa fa-burger-soda amenity-icon"></i></span>
                         </div>
                         <div className={"choose-amenities false" + (amenity.laundry ? " btn-amenities-clicked" : "")}
                              onClick={() => setAmenity({...amenity, 'laundry': !amenity['laundry']})}>
-                            <span>On-site Laundry <i class="fa fa-washer amenity-icon"></i></span>
+                            <span>On-site Laundry <i className="fa fa-washer amenity-icon"></i></span>
                         </div>
                         <div className={"choose-amenities false" + (amenity.mailroom ? " btn-amenities-clicked" : "")}
                              onClick={() => setAmenity({...amenity, 'mailroom': !amenity['mailroom']})}>
-                            <span>Pack Recieving Mailroom <i class="fa fa-envelope amenity-icon"></i></span>
+                            <span>Pack Recieving Mailroom <i className="fa fa-envelope amenity-icon"></i></span>
                         </div>
                         <div
                             className={"choose-amenities false" + (amenity.lounge_area ? " btn-amenities-clicked" : "")}
                             onClick={() => setAmenity({...amenity, 'lounge_area': !amenity['lounge_area']})}>
-                            <span>Lounge/Common Area <i class="fas fa-loveseat"></i></span>
+                            <span>Lounge/Common Area <i className="fas fa-loveseat"></i></span>
                         </div>
                         <div
                             className={"choose-amenities false" + (amenity.kitchen ? " btn-amenities-clicked" : "")}
                             onClick={() => setAmenity({...amenity, 'kitchen': !amenity['kitchen']})}>
-                            <span>Kitchen <i class="fas fa-utensils"></i></span>
+                            <span>Kitchen <i className="fas fa-utensils"></i></span>
                         </div>
                         <div
                             className={"choose-amenities false" + (amenity.elevator ? " btn-amenities-clicked" : "")}
                             onClick={() => setAmenity({...amenity, 'elevator': !amenity['elevator']})}>
-                            <span>Elevator <i class="fas fa-arrow-up"></i></span>
+                            <span>Elevator <i className="fas fa-arrow-up"></i></span>
                         </div>
                     </div>
                     <textarea maxlength="600" className={" w-full"} placeholder="Write about your experience"
                               value={comment} onChange={(e) => setCommment(e.target.value)}
                     /><br/>
-                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
+                    <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
                             onClick={() => {
                                 console.log(yearArr);
 

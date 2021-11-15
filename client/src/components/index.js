@@ -7,3 +7,4 @@ export { default as WriteReview } from "./WriteReview";
 export { default as DetailView } from "./DetailView";
 export { default as RateHall } from "./RateHall";
 export { default as AddSchool } from "./AddSchool";
+export { default as HallView } from "./HallView";
